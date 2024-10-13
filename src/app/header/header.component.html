@@ -1,0 +1,25 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand">Blog App</a>
+      </div>
+  
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li  >
+            <a *ngIf="isAuthenticate">Blogs</a>
+          </li>
+          <li >
+            <a *ngIf="!isAuthenticate">Authenticate</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li >
+            <a *ngIf="!isAuthenticate" style="cursor: pointer;">LogIn</a>
+            <a *ngIf="isAuthenticate" style="cursor: pointer;" (click)="logOut()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  

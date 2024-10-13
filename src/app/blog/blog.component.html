@@ -1,0 +1,37 @@
+<div class="fluid-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div *ngIf="isLoading">
+                ...Loading
+            </div>
+            <div *ngIf="blogList && blogList.length > 0;else otherContent">
+                <div class="card" *ngFor="let blogs of blogList">
+                    <h5 class="card-header">{{blogs.title}}</h5>
+                    <div class="card-body">
+                        <p class="card-text">{{blogs.description}}</p>
+                        <button class="btn btn-success" (click)="addBlog()">Add Blog</button>
+                        <button class="btn btn-info" (click)="editBlog()">Edit Blog</button>
+                        <button class="btn btn-danger" (click)="deleteBlog()">delete Blog</button>
+                    </div>
+                </div>
+                <!-- <button class="btn btn-success" (click)="addBlog()">Add Blog</button>
+                <button class="btn btn-info" (click)="editBlog()">Edit Blog</button>
+                <button class="btn btn-danger" (click)="deleteBlog()">delete Blog</button> -->
+                <!-- <div *ngFor="let blogs of blogList">
+                    <h2>
+                        {{blogs.title}}
+                    </h2>
+                    <p>
+                        {{blogs.description}}
+                    </p>
+                </div> -->
+            </div>
+
+            <ng-template #otherContent>
+                <div class="alert alert-danger" role="alert">
+                    <strong>{{blogInfo.ErrorMessage}}</strong>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+{
+    "blogs": [
+      { "id": "1", "title": "a title", "description": "Title desc" },
+      { "id": "2", "title": "another title", "description": "author desc" }
+    ]
+}
